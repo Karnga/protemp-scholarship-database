@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
+import { updateInvoice } from '@/app/lib/actions';
 
 export default function EditInvoiceForm({
   invoice,
@@ -17,8 +18,11 @@ export default function EditInvoiceForm({
   invoice: InvoiceForm;
   customers: CustomerField[];
 }) {
+  const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+ 
+  //return <form action={updateInvoiceWithId}>{/* ... */}</form>;
   return (
-    <form>
+    <form action={updateInvoiceWithId}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -33,7 +37,7 @@ export default function EditInvoiceForm({
               defaultValue={invoice.customer_id}
             >
               <option value="" disabled>
-                Select a customer
+                Select a student
               </option>
               {customers.map((customer) => (
                 <option key={customer.id} value={customer.id}>
@@ -69,7 +73,7 @@ export default function EditInvoiceForm({
         {/* Invoice Status */}
         <fieldset>
           <legend className="mb-2 block text-sm font-medium">
-            Set the invoice status
+            Set the tuition status
           </legend>
           <div className="rounded-md border border-gray-200 bg-white px-[14px] py-3">
             <div className="flex gap-4">
@@ -111,12 +115,12 @@ export default function EditInvoiceForm({
       </div>
       <div className="mt-6 flex justify-end gap-4">
         <Link
-          href="/dashboard/invoices"
+          href="/dashboard/tuitions"
           className="flex h-10 items-center rounded-lg bg-gray-100 px-4 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
         >
           Cancel
         </Link>
-        <Button type="submit">Edit Invoice</Button>
+        <Button type="submit">Edit Tuition</Button>
       </div>
     </form>
   );
