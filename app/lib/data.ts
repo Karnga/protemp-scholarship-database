@@ -6,6 +6,7 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   Revenue,
+  StudentField,
 } from './definitions';
 import { formatCurrency } from './utils';
 
@@ -184,6 +185,23 @@ export async function fetchCustomers() {
     `;
 
     return customers;
+  } catch (err) {
+    console.error('Database Error:', err);
+    throw new Error('Failed to fetch all customers.');
+  }
+}
+
+export async function fetchStudents() {
+  try {
+    const students = await sql<StudentField[]>`
+      SELECT
+        id,
+        name
+      FROM customers
+      ORDER BY name ASC
+    `;
+
+    return students;
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch all customers.');

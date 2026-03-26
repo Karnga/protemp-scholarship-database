@@ -54,9 +54,8 @@ export default async function InvoicesTable({
               </div>
             ))}
           </div>
-          <div className="overflow-y-auto max-h-96">
-          <table className="hidden min-w-x1 text-gray-900 md:table">
-            <thead className="sticky top-0 bg-white rounded-lg text-left text-sm font-normal">
+          <table className="hidden min-w-full text-gray-900 md:table">
+            <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
                 <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
                   Student
@@ -118,7 +117,6 @@ export default async function InvoicesTable({
               ))}
             </tbody>
           </table>
-          </div>
         </div>
       </div>
     </div>

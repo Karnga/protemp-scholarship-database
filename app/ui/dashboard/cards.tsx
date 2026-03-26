@@ -35,12 +35,12 @@ export default async function CardWrapper() {
         type="pending" 
       />
       <Card 
-        title="Total Tuitions" 
+        title="Total Dues" 
         value={numberOfInvoices} 
         type="invoices" 
       />
       <Card
-        title="Total Students"
+        title="Total Members"
         value={numberOfCustomers}
         type="customers"
       /> 

@@ -17,11 +17,11 @@ const links = [
     icon: HomeIcon, 
   },
   {
-    name: 'Tuitions',
+    name: 'Dues',
     href: '/dashboard/tuitions',
     icon: DocumentDuplicateIcon,
   },
-  { name: 'Students', 
+  { name: 'Members', 
     href: '/dashboard/students', 
     icon: UserGroupIcon, 
   },
