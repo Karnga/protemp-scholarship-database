@@ -1,4 +1,4 @@
-import { StudentField } from '@/app/lib/definitions';
+import { MemberField, StudentField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import {
   CheckIcon,
@@ -7,11 +7,11 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
-import { createInvoice } from '@/app/lib/actions';
+import { createInvoice, createMember } from '@/app/lib/actions';
 
-export default function Form({ students }: { students: StudentField[] }) {
+export default function Form({ students }: { students: MemberField[] }) {
   return (
-    <form action={createInvoice}>
+    <form action={createMember}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         
         {/* First Name */}
@@ -125,8 +125,8 @@ export default function Form({ students }: { students: StudentField[] }) {
           <div className="relative mt-2 rounded-md">
             <div className="relative">
               <input
-                id="date_of_birth"
-                name="date_of_birth"
+                id="birthDate"
+                name="birthDate"
                 type="date"
                 //step="0.01"
                 //placeholder="Enter address"
@@ -185,8 +185,8 @@ export default function Form({ students }: { students: StudentField[] }) {
           <div className="relative mt-2 rounded-md">
             <div className="relative">
               <input
-                id="contact_number"
-                name="contact_number"
+                id="contactNumber"
+                name="contactNumber"
                 type="text"
                 //step="0.01"
                 placeholder="Enter contact number"
@@ -245,8 +245,8 @@ export default function Form({ students }: { students: StudentField[] }) {
           <div className="relative mt-2 rounded-md">
             <div className="relative">
               <input
-                id="emergency_contact_name"
-                name="emergency_contact_name"
+                id="emergencyContactName"
+                name="emergencyContactName"
                 type="text"
                 //step="0.01"
                 placeholder="Enter emergency contact name"
@@ -265,8 +265,8 @@ export default function Form({ students }: { students: StudentField[] }) {
           <div className="relative mt-2 rounded-md">
             <div className="relative">
               <input
-                id="emergency_contact_number"
-                name="emergency_contact_number"
+                id="emergencyContactNumber"
+                name="emergencyContactNumber"
                 type="text"
                 //step="0.01"
                 placeholder="Enter emergency contact number"
@@ -285,7 +285,7 @@ export default function Form({ students }: { students: StudentField[] }) {
         >
           Cancel
         </Link>
-        <Button type="submit">Add Student</Button>
+        <Button type="submit">Add Member</Button>
       </div>
     </form>
   );

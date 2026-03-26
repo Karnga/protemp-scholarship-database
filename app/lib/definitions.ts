@@ -92,6 +92,11 @@ export type StudentField = {
   name: string;
 };
 
+export type MemberField = {
+  id: string;
+  name: string;
+};
+
 export type InvoiceForm = {
   id: string;
   customer_id: string;
